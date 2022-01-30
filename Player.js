@@ -11,19 +11,18 @@ class PlayerRect extends HitRect{
         this.w =        image.width;
         this.h =        image.height;
         this.grounded = false;
-        this.imageName =null;
-        this.message =  "";
-        this.char = "1"
+        this.health = 1;
+        this.imageArray =[];
         this.hits = []
     }
     move(rectlist){
         
         //INPUT HANDLING INPUT HANDLING INPUT HANDLING 
         if (keypress["Left"]){
-            this.velx = (this.velx-3)/1.25;
+            this.velx = (this.velx-3)/1.4;
         }
         else if (keypress["Right"]){
-            this.velx = (this.velx+3)/1.25;
+            this.velx = (this.velx+3)/1.4;
         }
         else{
             this.velx *= 0.49;
@@ -32,7 +31,7 @@ class PlayerRect extends HitRect{
             this.vely = -24;
         }
         else if (keypress["Down"]){
-            console.log("placeholder output");
+            //dimension shift
         }
 
         this.vely+=2;//Applies Gravity

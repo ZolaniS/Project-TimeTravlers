@@ -29,5 +29,3 @@ class Bullet {
 		return false
 	}
 }
-
-Object.setPrototypeOf(HitRect.prototype, Bullet.prototype);

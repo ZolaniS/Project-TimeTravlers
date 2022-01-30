@@ -5,13 +5,7 @@ class HitRect {
         this.y =        y;
         this.w =        image.width;
         this.h =        image.height;
-        this.imageName =null;
-        this.message =  "";
-        this.char = "1"
-    }
-    recalibrate(){
-        this.w =        this,image.width;
-        this.h =        this.image.height;
+        this.imageArray =[];
     }
 	draw(){
         c.drawImage(this.image,this.x,this.y,stdSize,stdSize);

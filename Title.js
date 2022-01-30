@@ -15,7 +15,6 @@ function Title(topText, bottomText){//When you click the start button, enter the
     function cl(e){
         var w = c.measureText("Start").width;
         if (e.x > 100 && e.x < 100+w && e.y < 200 && e.y > 200-64){
-            console.log(e.x)
             document.removeEventListener("mousemove", mm, false);
             document.removeEventListener("click", cl, false);
             main();

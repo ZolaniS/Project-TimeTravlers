@@ -59,7 +59,7 @@ function BackGround(lvl){
     var level;
     var rectarray = [];
     var enemyarray = [];
-    var objarray = [];
+    var enemyArray = [];
     var start = false;//                     TODO
     var line = null;
     var SPAWN = [0,0];
@@ -86,6 +86,12 @@ function BackGround(lvl){
                 else if (character == "*"){
                     var SPAWN = [x*stdSize,offsety*stdSize];
                 }
+                else if (character == "e"){
+                    L = new Enemy(IMAGEDICT["7"], x*stdSize,offsety*stdSize) //Standard block loading
+                    L.w = stdSize;
+                    L.h = stdSize;
+                    enemyArray.push(L);
+                }
                 // else if (character.toLowerCase() == "k"){
                 //     temp = new HitRect(IMAGEDICT["misc"]["key"], x*stdSize,offsety*stdSize)
                 //     temp.imageName = "key";
@@ -110,9 +116,8 @@ function BackGround(lvl){
             level = line.rsplit("$",1);
             if (level[1]==lvl){//If level number is correct, translating into loaded level.
                 start = true;
-                console.log("found level");
             }
         }
     }
-    return [rectarray, SPAWN, enemyarray, level[0], objarray];
+    return [rectarray, SPAWN, enemyarray, level[0], enemyArray];
 }

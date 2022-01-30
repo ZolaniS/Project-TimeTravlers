@@ -1,4 +1,4 @@
-var counter = 0
+var counter = 0; var enemyArray;
 
 const sleep = (milliseconds) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
@@ -18,6 +18,9 @@ window.addEventListener("keydown", function(e){
     }
     if (e.key == "Down" || e.key == "ArrowDown" || e.key == "s"){
         keypress["Down"] = true;
+    }
+    if (e.key == "r"){
+        Player.health = 0
     }
 });
 window.addEventListener("keyup", function(e){
