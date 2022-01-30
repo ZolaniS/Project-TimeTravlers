@@ -26,7 +26,7 @@ class PlayerRect extends HitRect{
             this.velx = (this.velx+3)/1.25;
         }
         else{
-            this.velx = Math.round(this.velx*0.49);
+            this.velx *= 0.49;
         }
         if (keypress["Up"] && this.grounded){
             this.vely = -24;
@@ -36,7 +36,6 @@ class PlayerRect extends HitRect{
         }
 
         this.vely+=2;//Applies Gravity
-        //this.x+=this.velx;
         this.y+=this.vely;
 
         this.hits = this.collideList(rectlist)
@@ -45,13 +44,12 @@ class PlayerRect extends HitRect{
         //COLLISION DETECTION COLLISION DETECTION COLLISION DETECTION
         if (this.hits.length > 0 && this.vely != 0){
             this.y -= this.vely
-            this.vely = Math.round(this.vely*0.49);
+            this.vely = this.vely*0.49;
             //reset boundaries of clipping boundaries.
         }
         this.hits = this.collideList(rectlist)
         if (this.hits.length > 0 && this.velx != 0){
             this.velx = this.velx*-1
-            //this.x -=this.velx
         }
 
         

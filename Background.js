@@ -99,6 +99,8 @@ function BackGround(lvl){
                 
                 else{
                     L = new HitRect(IMAGEDICT["5"], x*stdSize,offsety*stdSize) //Standard block loading
+                    L.w = stdSize;
+                    L.h = stdSize;
                     rectarray.push(L)
                 }
 //#LEVEL FINDING # LEVEL FINDING # LEVEL FINDING # LEVEL FINDING # LEVEL FINDING # 
