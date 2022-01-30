@@ -6,6 +6,8 @@ class PlayerRect extends HitRect{
         this.y =        y;
         this.velx=      0;
         this.vely=      0;
+        this.offsetx =  0;
+        this.offsety =  0;
         this.w =        image.width;
         this.h =        image.height;
         this.grounded = false;
@@ -15,7 +17,26 @@ class PlayerRect extends HitRect{
         this.hits = []
     }
     move(rectlist){
-        this.x+=this.velx;
+        
+        //INPUT HANDLING INPUT HANDLING INPUT HANDLING 
+        if (keypress["Left"]){
+            this.velx = (this.velx-3)/1.25;
+        }
+        else if (keypress["Right"]){
+            this.velx = (this.velx+3)/1.25;
+        }
+        else{
+            this.velx = Math.round(this.velx*0.49);
+        }
+        if (keypress["Up"] && this.grounded){
+            this.vely = -24;
+        }
+        else if (keypress["Down"]){
+            console.log("placeholder output");
+        }
+
+        this.vely+=2;//Applies Gravity
+        //this.x+=this.velx;
         this.y+=this.vely;
 
         this.hits = this.collideList(rectlist)
@@ -29,28 +50,12 @@ class PlayerRect extends HitRect{
         }
         this.hits = this.collideList(rectlist)
         if (this.hits.length > 0 && this.velx != 0){
-            this.x -=this.velx
+            this.velx = this.velx*-1
+            //this.x -=this.velx
         }
 
-        //INPUT HANDLING INPUT HANDLING INPUT HANDLING 
-        if (keypress["Left"]){
-            this.velx = (this.velx-3)/1.25;
-        }
-        else if (keypress["Right"]){
-            this.velx = (this.velx+3)/1.25;
-        }
-        else{
-            this.velx = Math.round(this.velx*0.49);
-        }
-        if (keypress["Up"] && this.grounded){
-            console.log(this.grounded)
-            this.vely = -24;
-        }
-        else if (keypress["Down"]){
-            console.log("placeholder output");
-        }
+        
 
-        this.vely+=2;//Applies Gravity
         return this.x, this.y
     }
     draw(){

@@ -1,6 +1,3 @@
-//var L;var RectArray;var spawn;var bg;var objarray;var skin;var PlayerRect;var text;var cont = true;
-//var proceed = true; var SPAWN = [0,0];var loaded = true;var level = true;var speed = 5;var numbro;
-//var stdSize = 50;var shoot = false; var angle = 0; var enemyarray = []; var bulletarray = []
 var proceed = true;
 var counter = 0
 

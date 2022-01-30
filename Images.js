@@ -2,7 +2,7 @@ var canvas = document.querySelector("canvas");
 canvas.width = window.innerWidth - 2*8;
 canvas.height = window.innerHeight - 2*8;
 var c = canvas.getContext("2d");
-function img(src,angle, flip){//Loads Images
+function img(src){//Loads Images
     var temp = document.createElement("img")
     temp.src = src;
     return temp;
