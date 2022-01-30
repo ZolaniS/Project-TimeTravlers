@@ -34,6 +34,6 @@ function main() {
     //     }
     // }
     if (cont){
-        window.setTimeout(main,200);//Set second number in milliseconds before loop
+        window.requestAnimationFrame(main);//Set second number in milliseconds before loop
     }
   }

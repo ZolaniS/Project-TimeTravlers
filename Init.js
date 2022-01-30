@@ -11,30 +11,30 @@ const sleep = (milliseconds) => {
 //the keypresses array being set and unset by 
 var keypress = {"Right":false, "Left":false, "Up":false, "Down":false};
 window.addEventListener("keydown", function(e){
-    if (e.key == "Right" || e.key == "ArrowRight" || e.key == "D"){
+    if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d"){
         keypress["Right"] = true;
     }
-    if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "A"){
+    if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "a"){
         keypress["Left"] = true;
     }
-    if (e.key == "Up" || e.key == "ArrowUp" || e.key == "W"){
+    if (e.key == "Up" || e.key == "ArrowUp" || e.key == "w"){
         keypress["Up"] = true;
     }
-    if (e.key == "Down" || e.key == "ArrowDown" || e.key == "S"){
+    if (e.key == "Down" || e.key == "ArrowDown" || e.key == "s"){
         keypress["Down"] = true;
     }
 });
 window.addEventListener("keyup", function(e){
-    if (e.key == "Right" || e.key == "ArrowRight" || e.key == "D"){
+    if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d"){
         keypress["Right"] = false;
     }
-    if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "A"){
+    if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "a"){
         keypress["Left"] = false;
     }
-    if (e.key == "Up" || e.key == "ArrowUp" || e.key == "W"){
+    if (e.key == "Up" || e.key == "ArrowUp" || e.key == "w"){
         keypress["Up"] = false;
     }
-    if (e.key == "Down" || e.key == "ArrowDown" || e.key == "S"){
+    if (e.key == "Down" || e.key == "ArrowDown" || e.key == "s"){
         keypress["Down"] = false;
     }
 });

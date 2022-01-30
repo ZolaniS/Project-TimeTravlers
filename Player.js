@@ -12,28 +12,46 @@ class PlayerRect extends HitRect{
         this.imageName =null;
         this.message =  "";
         this.char = "1"
+        this.hits = []
     }
     move(rectlist){
-        this.grounded = this.collideList(rectlist).length != 0 && this.vely > 0;
+        this.x+=this.velx;
+        this.y+=this.vely;
 
+        this.hits = this.collideList(rectlist)
+        this.grounded = this.hits.length > 0 && this.vely > 0;
+
+        //COLLISION DETECTION COLLISION DETECTION COLLISION DETECTION
+        if (this.hits.length > 0 && this.vely != 0){
+            this.y -= this.vely
+            this.vely = Math.round(this.vely*0.49);
+            //reset boundaries of clipping boundaries.
+        }
+        this.hits = this.collideList(rectlist)
+        if (this.hits.length > 0 && this.velx != 0){
+            this.x -=this.velx
+        }
+
+        //INPUT HANDLING INPUT HANDLING INPUT HANDLING 
         if (keypress["Left"]){
-            this.velx = -4;
-            console.log("sdf")
+            this.velx = (this.velx-3)/1.25;
         }
         else if (keypress["Right"]){
-            this.velx = 4;
-            console.log("odod")
+            this.velx = (this.velx+3)/1.25;
+        }
+        else{
+            this.velx = Math.round(this.velx*0.49);
         }
         if (keypress["Up"] && this.grounded){
-            this.vely = -16;
+            console.log(this.grounded)
+            this.vely = -24;
         }
         else if (keypress["Down"]){
             console.log("placeholder output");
         }
-        this.vely+=4;
-        this.vely+= Number(this.grounded)*-1*this.vely
-        this.x+=this.velx;
-        this.y+=this.vely;
+
+        this.vely+=2;//Applies Gravity
+        return this.x, this.y
     }
     draw(){
         c.drawImage(this.image,this.x,this.y);

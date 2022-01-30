@@ -35,7 +35,7 @@ class HitRect {
         for(var i = 0; i < rectlist.length; i+=1){
             rect = rectlist[i];
             if (this.x < rect.x+rect.w && this.x+this.w > rect.x && this.y < rect.y+rect.h && this.y+this.h > rect.y){
-                hits.push(i);
+                hits.push(rect);
             }
         }
         return hits
